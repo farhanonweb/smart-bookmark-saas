@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Smart Bookmark SaaS App
 
-## Getting Started
+A modern SaaS-style bookmark manager built with Next.js, Supabase, and Tailwind CSS.
 
-First, run the development server:
+Live Demo: https://your-vercel-url.vercel.app  
+GitHub Repo: https://github.com/your-username/smart-bookmark-saas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔐 Google OAuth Authentication
+- 📂 Private bookmarks per user
+- ⚡ Real-time updates using Supabase Realtime
+- 🌙 Dark / Light mode with persistence
+- 🎨 SaaS-style UI with sidebar layout
+- 🖼 Favicon auto-fetch per bookmark
+- 🔔 Toast notifications
+- 📱 Fully responsive design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🏗 Architecture
 
-To learn more about Next.js, take a look at the following resources:
+Frontend:
+- Next.js (App Router)
+- Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend:
+- Supabase (Auth + Database + Realtime)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Database:
+- PostgreSQL with Row Level Security (RLS)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Folder Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SMART-BOOKMARK-APP
+│
+├── app/
+│   ├── dashboard/
+│   │   └── page.tsx
+│   ├── login/
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
+├── lib/
+│   └── supabaseClient.ts
+│
+├── public/
+│   └── (assets & icons)
+│
+|
+│
+├── README.md
+├── package.json
+├── next.config.ts
+├── postcss.config.mjs
+└── tsconfig.json
+
+
+
+---
+
+## ⚡ How Realtime Works
+
+Supabase Realtime listens to PostgreSQL changes.
+
+When:
+- A bookmark is INSERTED
+- A bookmark is DELETED
+
+A WebSocket event is triggered.
+
+The UI updates instantly without page refresh.
+
+---
+
+## 🔐 Security
+
+- Row Level Security enabled
+- Users can only access their own bookmarks
+- Google OAuth only login
+
+---
+
+## 🚀 Deployment
+
+Deployed on Vercel.
+
+Environment Variables:
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+---
+
+## 🧠 Challenges Faced
+
+1. Handling real-time state duplication
+2. Dark mode persistence
+3. Preventing double UI updates
+4. Proper RLS configuration
+
+---
+
+## 📸 Screenshots
+
+![Dashboard](public/screenshots/dashboard.png)
+
+---
+
+## 👨‍💻 Author
+
+Farhan Gheri  
