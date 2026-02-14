@@ -33,6 +33,7 @@ Database:
 
 ## 📁 Folder Structure
 
+```
 SMART-BOOKMARK-APP/
 │
 ├── app/
@@ -58,6 +59,7 @@ SMART-BOOKMARK-APP/
 ├── postcss.config.mjs
 ├── tsconfig.json
 └── .gitignore
+```
 
 
 ---
