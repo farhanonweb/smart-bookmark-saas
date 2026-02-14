@@ -1,9 +1,6 @@
 # 🚀 Smart Bookmark SaaS App
 
-A modern SaaS-style bookmark manager built with Next.js, Supabase, and Tailwind CSS.
-
-Live Demo: https://your-vercel-url.vercel.app  
-GitHub Repo: https://github.com/your-username/smart-bookmark-saas
+Smart Bookmark is a production-ready SaaS-style bookmark management platform built using modern full-stack technologies. It allows users to securely save, organize, and manage their important web links in a clean and responsive dashboard. The application uses Google OAuth for authentication, Supabase for backend services (database + realtime + auth), and Tailwind CSS for a modern UI experience. Designed with scalability, security, and performance in mind, this project demonstrates real-world SaaS architecture principles.
 
 ---
 
@@ -36,7 +33,7 @@ Database:
 
 ## 📁 Folder Structure
 
-SMART-BOOKMARK-APP
+SMART-BOOKMARK-APP/
 │
 ├── app/
 │   ├── dashboard/
@@ -51,16 +48,16 @@ SMART-BOOKMARK-APP
 │   └── supabaseClient.ts
 │
 ├── public/
-│   └── (assets & icons)
-│
-|
+│   └── screenshots/
+│       └── dashboard.png
 │
 ├── README.md
 ├── package.json
+├── package-lock.json
 ├── next.config.ts
 ├── postcss.config.mjs
-└── tsconfig.json
-
+├── tsconfig.json
+└── .gitignore
 
 
 ---
