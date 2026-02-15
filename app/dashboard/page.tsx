@@ -111,7 +111,6 @@ export default function DashboardPage() {
     }
   };
 
-  // ✅ Updated Redirect (Logout → Home Page)
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push("/");
@@ -127,6 +126,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row">
+      {/* DESKTOP SIDEBAR */}
       <aside className="hidden md:flex md:w-64 flex-col bg-gradient-to-b from-gray-800 to-gray-900 shadow-xl">
         <div className="h-16 flex items-center px-6 border-b border-gray-700">
           <div className="flex items-center gap-2">
@@ -152,7 +152,10 @@ export default function DashboardPage() {
       </aside>
 
       <div className="flex-1 flex flex-col">
+        {/* HEADER */}
         <header className="h-16 flex items-center justify-between px-4 md:px-8 bg-gray-800 border-b border-gray-700 shadow-md">
+          
+          {/* Mobile Logo */}
           <div className="flex items-center gap-2 md:hidden">
             <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-sm font-bold">
               SB
@@ -160,6 +163,7 @@ export default function DashboardPage() {
             <span className="font-semibold">SmartBook</span>
           </div>
 
+          {/* Desktop Title */}
           <div className="hidden md:block">
             <h1 className="text-2xl font-bold">Dashboard</h1>
             <p className="text-xs text-gray-400">
@@ -167,15 +171,26 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500">
-            <img
-              src={
-                avatarUrl ||
-                "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop"
-              }
-              alt="User"
-              className="w-full h-full object-cover"
-            />
+          {/* Avatar + Mobile Logout */}
+          <div className="flex items-center gap-3">
+            {/* Mobile Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="md:hidden text-sm bg-red-500 px-3 py-1 rounded-lg hover:bg-red-600 transition"
+            >
+              Logout
+            </button>
+
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500">
+              <img
+                src={
+                  avatarUrl ||
+                  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&auto=format&fit=crop"
+                }
+                alt="User"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </header>
 
